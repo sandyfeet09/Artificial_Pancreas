@@ -1,13 +1,14 @@
-package sensor;
+package controller_helper;
 
-import database.dataset_read;
+import controller.SystemController;
+import sensor.dataset_read;
 
 public class hypoglycemia 
 {
 	public boolean result()
 	{
-		dataset_read data = new dataset_read();
-		if (data.bg_level <= 20)
+
+		if(SystemController.data.bg_level<=20)
 		{
 			System.out.println("Blood Glucose is Low");
 			return true;

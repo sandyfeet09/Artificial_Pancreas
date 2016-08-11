@@ -3,5 +3,9 @@
 	<classpathentry kind="src" path="system"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/hitagambheer/Downloads/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/hitagambheer/Downloads/class-visualizer/clsvis.jar"/>
+	<classpathentry kind="lib" path="/Users/hitagambheer/Downloads/class-visualizer/lib/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/hitagambheer/Downloads/class-visualizer/lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/hitagambheer/Downloads/code2uml/Code_2_UML.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

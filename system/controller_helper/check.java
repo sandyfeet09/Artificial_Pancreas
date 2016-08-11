@@ -1,4 +1,4 @@
-package sensor;
+package controller_helper;
 
 import pump.basal_insulin;
 import pump.bolus_insulin;
@@ -10,7 +10,24 @@ public class check extends Thread
 		meal_supervision_state,
 		basal_state
 	}
+	
 	public void run() 
+	{
+	
+		  for(int x =0 ;x<1001;x++ )
+		  {
+	CheckStatus();
+	try {
+		Thread.sleep(6000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	}
+}
+	
+	public void CheckStatus()
 	{
 		try {
 			Thread.sleep(1000);
@@ -26,16 +43,23 @@ public class check extends Thread
 		basal_insulin basal = new basal_insulin();
 		bolus_insulin bolus = new bolus_insulin();
 		
-			if (hyper.result()== true || hypo.result() ==true)
+		  
+			if (hyper.result()== true)
 			{
 				state = CurrentState.braking_correction_state;
-				basal.getClass();
+				basal.Result();
+			}
+			
+			if (hypo.result() ==true)
+			{
+				state = CurrentState.braking_correction_state;
+				bolus.Result();
 			}
 			
 			if(meal.result() == true)
 			{
 				state =  CurrentState.meal_supervision_state;
-				System.out.println("Meal State Activated");
+				
 				bolus.getClass();
 			}
 			
@@ -45,25 +69,7 @@ public class check extends Thread
 				System.out.println("Blood Glucose is Normal");
 			}
 			
-	//		else
-	//		{
-	//			System.out.println("Fatal System Error");
-	//		}
-//			switch (state)
-//			{
-//			case braking_correction_state:
-//					basal.getClass();
-//					
-//			break;
-//			case meal_supervision_state:
-//					System.out.println("Meal State Activated");
-//					bolus.getClass();
-//			break;
-//			case basal_state:
-//			System.out.println("Blood Glucose is Normal");
-//			break;
-//			
-//			}	
-		
+	
+		  }
 	}
-}
+

@@ -1,20 +1,21 @@
-package database;
+package sensor;
 import java.sql.*;
 
-
- 
-public class dataset_read extends Thread{
-
+public class dataset_read extends Thread
+{
 	public int bg_level;
 	public int code;
-  public void run() 
-  {
+	
+    public void run() 
+    {
 	  dataset();
-		  }  
+    }  
   
-  public void dataset()
-  {
-	  try{  
+    public void dataset()
+    {
+    	
+	  try
+	  	{  
 		  Class.forName("com.mysql.jdbc.Driver");  
 		  System.out.println("Connecting to database...");
 		  Connection con=DriverManager.getConnection(  
@@ -30,14 +31,16 @@ public class dataset_read extends Thread{
 		  System.out.println("Blood Glucose is:  "+rs.getInt(1)+"  Code is:  "+rs.getInt(2)); 
 		  bg_level = rs.getInt(1);
 		  code = rs.getInt(2);
-		  Thread.sleep(5000);
+		  Thread.sleep(6000);
 		  }
 		  con.close();  
-		  }
-	  catch(Exception e){ 
+		 }
+	  
+	  catch(Exception e)
+	  	 { 
 		  System.out.println(e);
-		  }      
+		 }      
   	}
-  }
+}
 
 
